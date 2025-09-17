@@ -1,0 +1,159 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { Coins, Shield, Database, Layers, Link2, Sparkles, Brain, Users, BarChart3, Globe } from 'lucide-react'
+import { resumeData } from '@/data/resume'
+
+const chainColors: { [key: string]: string } = {
+  'Solana': 'from-blue-500 to-cyan-500',
+  'Multi-chain': 'from-cyan-500 to-teal-500',
+  'Stacks': 'from-orange-500 to-yellow-500',
+  'Bitcoin L2': 'from-yellow-500 to-orange-500',
+  'Cosmos': 'from-purple-500 to-blue-500',
+  'Ethereum': 'from-blue-600 to-indigo-600',
+  'Base': 'from-blue-400 to-blue-600',
+  'Arbitrum': 'from-blue-500 to-blue-700',
+}
+
+const typeIcons: { [key: string]: any } = {
+  'DePIN': Database,
+  'NFT Marketplace': Sparkles,
+  'Security': Shield,
+  'DeFi': Coins,
+  'Bitcoin DeFi': Layers,
+  'AI Infrastructure': Brain,
+  'Social Infrastructure': Users,
+  'Decentralized AI': Brain,
+  'Privacy Infrastructure': Shield,
+  'AI Agents': Brain,
+  'InfoFi': BarChart3,
+  'Ecosystem': Globe,
+  'Infrastructure': Database,
+  'Zero-Knowledge': Shield,
+  'Launchpad': Sparkles,
+  'Content Creation': Users,
+}
+
+// 프로젝트별 로고 매핑
+const projectLogos: { [key: string]: string } = {
+  'Kaito AI': '/kaito.jpg',
+  'UXLINK': '/uxlink.jpg',
+  'Allora Network': '/allora.jpg',
+  'Zama': '/zama.jpg',
+  'Sahara AI': '/sahara.jpg',
+  'Theoriq': '/theoriq.png',
+  'Boundless': '/boundless.jpg',
+  'OpenSea': '/opensea.png',
+  'Magic Eden': '/magiceden.png',
+}
+
+export default function Web3Experience() {
+  const [ref, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  })
+
+  return (
+    <section className="py-20 relative" ref={ref}>
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-5xl font-bold mb-4">
+            <span className="text-gradient">Web3 Journey</span>
+          </h2>
+          <p className="text-xl text-gray-400">
+            Building the decentralized future, one block at a time
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {resumeData.web3Experience.map((exp, index) => {
+            const Icon = typeIcons[exp.type] || Link2
+            const logoSrc = projectLogos[exp.project]
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group relative"
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-web3-blue/20 to-web3-blue/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
+                <div className="relative glass rounded-xl p-6 border border-white/10 hover:border-web3-blue/50 transition-all duration-300">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
+                      {logoSrc ? (
+                        <img 
+                          src={logoSrc} 
+                          alt={`${exp.project} logo`}
+                          className="w-full h-full object-cover rounded-lg"
+                        />
+                      ) : (
+                        <Icon className="w-6 h-6 text-web3-blue" />
+                      )}
+                    </div>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r ${chainColors[exp.chain] || 'from-gray-500 to-gray-600'} text-white`}>
+                      {exp.chain}
+                    </span>
+                  </div>
+
+                  <h3 className="text-xl font-bold mb-1">{exp.project}</h3>
+                  <p className="text-sm text-web3-blue mb-2">{exp.type}</p>
+                  <p className="text-gray-400 text-sm mb-3">{exp.description}</p>
+                  
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-gray-500">{exp.role}</span>
+                    <motion.div
+                      animate={{ rotate: [0, 360] }}
+                      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                      className="w-6 h-6 rounded-full bg-gradient-to-r from-web3-blue to-web3-cyan opacity-50"
+                    />
+                  </div>
+
+                  <div className="mt-4 pt-4 border-t border-white/10">
+                    <p className="text-xs text-gray-400">
+                      ✨ {exp.achievement}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* Stats */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+        >
+          {[
+            { label: 'Protocols Used', value: '30+', icon: Layers },
+            { label: 'Chains Explored', value: '10+', icon: Link2 },
+            { label: 'NFTs Collected', value: '200+', icon: Sparkles },
+            { label: 'Transactions', value: '3000+', icon: Coins },
+          ].map((stat, index) => (
+            <motion.div
+              key={index}
+              whileHover={{ scale: 1.05 }}
+              className="glass rounded-xl p-6 text-center border border-white/10"
+            >
+              <stat.icon className="w-8 h-8 mx-auto mb-2 text-web3-blue" />
+              <div className="text-2xl font-bold text-gradient">{stat.value}</div>
+              <div className="text-sm text-gray-400">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+  )
+}

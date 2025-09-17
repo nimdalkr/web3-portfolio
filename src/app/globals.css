@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+ 
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+  }
+
+  body {
+    @apply overflow-x-hidden transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-web3-blue via-web3-cyan to-web3-teal;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-lg border border-white/10 dark:bg-white/5 dark:border-white/10;
+  }
+  
+  .light .glass {
+    @apply bg-gray-900/5 border border-gray-900/10;
+  }
+
+  /* Light mode text improvements */
+  .light .text-gray-300 {
+    @apply text-gray-700;
+  }
+
+  .light .text-gray-400 {
+    @apply text-gray-600;
+  }
+
+  .neon-border {
+    @apply relative before:absolute before:inset-0 before:p-[2px] before:bg-gradient-to-r before:from-web3-blue before:via-web3-cyan before:to-web3-teal before:rounded-lg before:-z-10 before:blur-sm;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A1B;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3B82F6, #06B6D4);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #2563EB, #0891B2);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Animation classes */
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.gradient-animation {
+  background: linear-gradient(-45deg, #3B82F6, #06B6D4, #0891B2, #059669);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Particle effect */
+.particle {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.5;
+  animation: particle-float 20s infinite linear;
+}
+
+@keyframes particle-float {
+  from {
+    transform: translateY(100vh) translateX(0);
+  }
+  to {
+    transform: translateY(-100vh) translateX(100px);
+  }
+}
+
+/* Print styles for Resume */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .glass {
+    @apply bg-transparent border border-gray-300;
+  }
+  
+  .text-gradient {
+    @apply text-black;
+  }
+  
+  /* Hide interactive elements */
+  nav, .particle, video, canvas {
+    display: none !important;
+  }
+  
+  /* Adjust spacing for print */
+  section {
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+  
+  /* Make text more readable for print */
+  .text-gray-400 {
+    @apply text-gray-600;
+  }
+}
