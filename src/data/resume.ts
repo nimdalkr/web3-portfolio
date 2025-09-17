@@ -4,7 +4,7 @@ export const resumeData = {
   title: "Web3 Marketing Specialist & Community Builder",
   email: "0xnimdal@gmail.com",
   phone: "010-****-8531",
-  location: "서울시 관악구",
+  location: "서울",
   age: 32,
   birthDate: "1992년 11월 20일",
   nationality: "대한민국",
@@ -14,12 +14,12 @@ export const resumeData = {
     nickname: "Nimdal",
     birthDate: "1992년 11월 20일",
     age: "만32세",
-    location: "서울시 관악구",
+    location: "서울",
     nationality: "대한민국",
     maritalStatus: "미혼",
     militaryService: "해군 만기전역",
     bloodType: "B형",
-    hobbies: ["블록체인 리서치", "Web3 트렌드 분석", "커뮤니티 활동", "독서"],
+    hobbies: ["블록체인 리서치", "Web3 트렌드 분석", "커뮤니티 활동", "InfoFi 데이터 분석", "플랫폼 개발/기획", "AI"],
     personality: ["도전적", "협업지향적", "분석적", "커뮤니케이션"]
   },
   
@@ -306,9 +306,9 @@ export const resumeData = {
 
   education: [
     {
-      school: "부흥고등학교",
-      degree: "고등학교 졸업",
-      period: "졸업",
+      school: "동명대학교",
+      degree: "중퇴",
+      period: "중퇴",
       description: "자기주도적 학습을 통한 실무 역량 개발"
     }
   ],

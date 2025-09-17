@@ -16,9 +16,9 @@ export default function AnimatedName() {
       setTimeout(() => {
         setDisplayName(prev => prev === 'Takchanwoo' ? 'Nimdal' : 'Takchanwoo')
         setIsTransitioning(false)
-      }, 500) // Half second for the transition effect
+      }, 800) // Longer transition effect
 
-    }, 3000) // Change every 3 seconds
+    }, 5000) // Change every 5 seconds
 
     return () => clearInterval(interval)
   }, [])

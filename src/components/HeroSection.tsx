@@ -99,13 +99,11 @@ export default function HeroSection() {
           >
             <TypeAnimation
               sequence={[
-                'Web3 Marketing Specialist',
+                'Online Marketing Specialist',
                 2000,
-                'Community Builder',
+                'InfoFi Enthusiast',
                 2000,
-                'DeFi Enthusiast',
-                2000,
-                'NFT Ecosystem Explorer',
+                'Community Manager',
                 2000,
               ]}
               wrapper="span"
