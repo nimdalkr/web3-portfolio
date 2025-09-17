@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Send, MessageCircle, Twitter, Github, Linkedin } from 'lucide-react'
+import { Send, MessageCircle, Twitter, Github, Linkedin, Phone } from 'lucide-react'
 import { resumeData } from '@/data/resume'
 
 export default function ContactSection() {
@@ -136,6 +136,7 @@ export default function ContactSection() {
                   { icon: Twitter, label: 'X', value: '@0xnimdal', link: 'https://x.com/0xnimdal' },
                   { icon: MessageCircle, label: 'Discord', value: '@nimdal', link: resumeData.links.discord },
                   { icon: Send, label: 'Telegram', value: '@nimdal', link: resumeData.links.telegram },
+                  { icon: Phone, label: 'Phone', value: '010-4935-8531', link: 'tel:010-4935-8531' },
                 ].map((item, index) => (
                   <motion.a
                     key={index}
