@@ -20,8 +20,8 @@ export const resumeData = {
     militaryService: "해군 만기전역",
     volunteerHours: "2000+",
     bloodType: "B형",
-    hobbies: ["블록체인 리서치", "Web3 트렌드 분석", "커뮤니티 활동", "InfoFi 데이터 분석", "플랫폼 개발/기획", "AI"],
-    personality: ["도전적", "협업지향적", "분석적", "커뮤니케이션"]
+    hobbies: ["블록체인 리서치", "Web3 트렌드 분석", "커뮤니티 활동", "InfoFi 데이터 분석", "플랫폼 개발/기획", "AI", "콘텐츠 제작", "온체인 리서치", "데이터 시각화", "자동화 툴 활용"],
+    personality: ["도전적", "협업지향적", "분석적", "커뮤니케이션", "문제해결형", "탐구형", "실행력강함", "트렌드캐처", "융합적사고"]
   },
   
   summary: `창업 경험과 다양한 마케팅 스킬을 보유한 Web3 마케터로, 블록체인 생태계에서의 지속적인 성장과 혁신을 추구합니다. 
@@ -272,7 +272,9 @@ export const resumeData = {
       "Web3 마케팅 전략 수립",
       "CEX/DEX 트레이딩",
       "KOL 활동 및 네트워킹",
-      "콘텐츠 제작 및 배포"
+      "콘텐츠 제작 및 배포",
+      "다계정 에어드랍",
+      "Crypto Twitter 활동"
     ],
     technical: [
       "HTML5/CSS3",

@@ -2,8 +2,19 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Twitter, TrendingUp, Users, BarChart3, Calendar, MessageCircle, ExternalLink, Heart, Star, Trophy, Target, Award, Zap, CheckCircle } from 'lucide-react'
+import { TrendingUp, Users, BarChart3, Calendar, MessageCircle, ExternalLink, Heart, Star, Trophy, Target, Award, Zap, CheckCircle } from 'lucide-react'
 import { resumeData } from '@/data/resume'
+
+// X (Twitter) Logo Component
+const XIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+  >
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+)
 
 export default function SocialInfluenceSection() {
   const [ref, inView] = useInView({
@@ -40,7 +51,7 @@ export default function SocialInfluenceSection() {
           >
             <div className="flex items-center justify-center mb-6">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-web3-blue to-web3-cyan p-3 flex items-center justify-center">
-                <Twitter className="w-full h-full text-white" />
+                <XIcon className="w-full h-full text-white" />
               </div>
             </div>
             
@@ -118,7 +129,7 @@ export default function SocialInfluenceSection() {
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full font-semibold shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
                 >
-                  <Twitter className="w-5 h-5" />
+                  <XIcon className="w-5 h-5" />
                   X Feed Highlights
                   <ExternalLink className="w-5 h-5" />
                 </motion.a>

@@ -68,12 +68,21 @@ export default function Navigation() {
     >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
+          {/* Logo with Profile Image */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold"
+            className="flex items-center gap-3"
           >
-            <span className="text-gradient">Portfolio</span>
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-web3-blue to-web3-cyan p-0.5">
+              <div className="w-full h-full rounded-full overflow-hidden">
+                <img
+                  src="/profile.jpg"
+                  alt="Nimdal Profile"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+            <span className="text-2xl font-bold text-gradient">Nimdal</span>
           </motion.div>
 
           {/* Desktop Menu */}

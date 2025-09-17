@@ -158,7 +158,7 @@ export default function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.4 }}
-            className="flex justify-center gap-6"
+            className="flex justify-center gap-6 mb-12"
           >
             {[
               { icon: Github, link: resumeData.links.github },
@@ -180,19 +180,19 @@ export default function HeroSection() {
               </motion.a>
             ))}
           </motion.div>
-        </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, y: [0, 10, 0] }}
-          transition={{
-            opacity: { delay: 1.6 },
-            y: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
-          }}
-          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
-        >
-          <ChevronDown className="w-6 h-6 text-web3-blue" />
+          {/* Scroll indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, y: [0, 10, 0] }}
+            transition={{
+              opacity: { delay: 1.6 },
+              y: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
+            }}
+            className="flex justify-center"
+          >
+            <ChevronDown className="w-6 h-6 text-web3-blue" />
+          </motion.div>
         </motion.div>
       </div>
     </section>
