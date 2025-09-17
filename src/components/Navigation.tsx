@@ -69,12 +69,20 @@ export default function Navigation() {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo with Profile Image */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center gap-3"
+          <motion.a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault()
+              window.scrollTo({ top: 0, behavior: 'smooth' })
+            }}
+            className="flex items-center gap-3 cursor-pointer group"
           >
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-web3-blue to-web3-cyan p-0.5">
-              <div className="w-full h-full rounded-full overflow-hidden">
+            <div className="w-10 h-10 rounded-full p-0.5 relative overflow-hidden">
+              {/* Base background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-web3-blue to-web3-cyan rounded-full" />
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-r from-web3-blue via-purple-500 via-pink-500 to-orange-500 bg-[length:300%_100%] bg-[position:-100%_50%] group-hover:bg-[position:100%_50%] transition-all duration-[2000ms] ease-in-out rounded-full opacity-0 group-hover:opacity-100" />
+              <div className="w-full h-full rounded-full overflow-hidden relative z-10">
                 <img
                   src="/profile.jpg"
                   alt="Nimdal Profile"
@@ -82,8 +90,17 @@ export default function Navigation() {
                 />
               </div>
             </div>
-            <span className="text-2xl font-bold text-gradient">Nimdal</span>
-          </motion.div>
+            <span className="text-2xl font-bold relative overflow-hidden whitespace-nowrap w-[140px] group-hover:w-[180px] transition-all duration-[2000ms] ease-in-out">
+              {/* Base text */}
+              <span className="block bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent transform group-hover:-translate-y-full transition-transform duration-[1530ms] ease-in-out">
+                Nimdal
+              </span>
+              {/* Hover text */}
+              <span className="absolute top-0 left-0 bg-gradient-to-r from-web3-blue via-purple-500 via-pink-500 to-orange-500 bg-[length:300%_100%] bg-[position:-100%_50%] group-hover:bg-[position:100%_50%] transition-all duration-[1530ms] ease-in-out bg-clip-text text-transparent transform translate-y-full group-hover:translate-y-0">
+                Takchanwoo
+              </span>
+            </span>
+          </motion.a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
