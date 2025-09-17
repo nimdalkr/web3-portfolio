@@ -72,7 +72,7 @@ export default function Web3Experience() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {resumeData.web3Experience.map((exp, index) => {
+          {resumeData.web3Experience.filter(exp => exp.project !== "Other Projects").map((exp, index) => {
             const Icon = typeIcons[exp.type] || Link2
             const logoSrc = projectLogos[exp.project]
 
@@ -86,13 +86,13 @@ export default function Web3Experience() {
                 className="group relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-web3-blue/20 to-web3-blue/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="relative glass rounded-xl p-6 border border-gray-200 dark:border-white/10 hover:border-web3-blue/50 transition-all duration-300">
+
+                <div className="relative glass rounded-xl p-6 border border-gray-200 dark:border-white/10 hover:border-web3-blue/50 transition-all duration-300 h-full flex flex-col">
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
                       {logoSrc ? (
-                        <img 
-                          src={logoSrc} 
+                        <img
+                          src={logoSrc}
                           alt={`${exp.project} logo`}
                           className="w-full h-full object-cover rounded-lg"
                         />
@@ -105,20 +105,22 @@ export default function Web3Experience() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">{exp.project}</h3>
-                  <p className="text-sm text-web3-blue mb-2">{exp.type}</p>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{exp.description}</p>
-                  
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-600 dark:text-gray-500">{exp.role}</span>
-                    <motion.div
-                      animate={{ rotate: [0, 360] }}
-                      transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                      className="w-6 h-6 rounded-full bg-gradient-to-r from-web3-blue to-web3-cyan opacity-50"
-                    />
+                  <div className="flex-1 flex flex-col">
+                    <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">{exp.project}</h3>
+                    <p className="text-sm text-web3-blue mb-2">{exp.type}</p>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm mb-3 flex-1">{exp.description}</p>
+
+                    <div className="flex items-center justify-between mb-4">
+                      <span className="text-xs text-gray-600 dark:text-gray-500">{exp.role}</span>
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                        className="w-6 h-6 rounded-full bg-gradient-to-r from-web3-blue to-web3-cyan opacity-50"
+                      />
+                    </div>
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-white/10">
+                  <div className="pt-4 border-t border-gray-200 dark:border-white/10">
                     <p className="text-xs text-gray-600 dark:text-gray-400">
                       ✨ {exp.achievement}
                     </p>
@@ -128,6 +130,51 @@ export default function Web3Experience() {
             )
           })}
         </div>
+
+        {/* Other Projects - Separate Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          whileHover={{ scale: 1.02, y: -5 }}
+          className="group relative mt-8"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+          <div className="relative glass rounded-xl p-8 border border-gray-200 dark:border-white/10 hover:border-purple-500/50 transition-all duration-300 bg-gradient-to-r from-purple-500/5 via-pink-500/5 to-orange-500/5">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-4">
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-r from-purple-500 to-orange-500 flex items-center justify-center">
+                  <Globe className="w-8 h-8 text-white" />
+                </div>
+              </div>
+
+              <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">다양한 Web3 생태계 참여</h3>
+              <p className="text-lg text-purple-500 mb-4 font-semibold">100+ 프로젝트 경험</p>
+              <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-2xl mx-auto">
+                DeFi, GameFi, SocialFi 등 다양한 Web3 생태계에서 활발한 커뮤니티 활동과 프로젝트 참여를 통해
+                폭넓은 경험과 네트워크를 구축했습니다.
+              </p>
+
+              <div className="flex flex-wrap gap-3 justify-center">
+                {['DeFi', 'GameFi', 'SocialFi', 'NFT', 'Layer1', 'Layer2', 'DePIN', 'AI', 'RWA'].map((category, idx) => (
+                  <span
+                    key={idx}
+                    className="px-4 py-2 bg-gradient-to-r from-purple-500/20 to-orange-500/20 rounded-full text-sm font-medium border border-purple-500/30 text-purple-600 dark:text-purple-400"
+                  >
+                    {category}
+                  </span>
+                ))}
+              </div>
+
+              <div className="mt-6 pt-4 border-t border-gray-200 dark:border-white/10">
+                <p className="text-sm text-gray-600 dark:text-gray-400 italic">
+                  "Web3 생태계의 다양한 영역에서 지속적인 학습과 기여를 통해 종합적인 이해도를 높여왔습니다"
+                </p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Enhanced Stats Infographic */}
         <motion.div

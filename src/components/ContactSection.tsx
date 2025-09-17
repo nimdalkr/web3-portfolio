@@ -52,11 +52,12 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: -50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="h-full"
           >
-            <div className="glass rounded-2xl p-8 border border-white/10">
+            <div className="glass rounded-2xl p-8 border border-white/10 h-full flex flex-col">
               <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+
+              <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
                   <input
@@ -67,7 +68,7 @@ export default function ContactSection() {
                     placeholder="Your name"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2">Email</label>
                   <input
@@ -78,22 +79,22 @@ export default function ContactSection() {
                     placeholder="your@email.com"
                   />
                 </div>
-                
-                <div>
+
+                <div className="flex-1 flex flex-col">
                   <label className="block text-sm font-medium mb-2">Message</label>
                   <textarea
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-web3-blue transition-colors h-32 resize-none"
+                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:border-web3-blue transition-colors flex-1 resize-none min-h-[8rem]"
                     placeholder="Tell me about your project..."
                   />
                 </div>
-                
+
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full px-6 py-3 bg-gradient-to-r from-web3-blue to-web3-blue rounded-lg font-semibold hover:shadow-lg hover:shadow-web3-blue/50 transition-all duration-300 flex items-center justify-center gap-2"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-web3-blue to-web3-blue rounded-lg font-semibold hover:shadow-lg hover:shadow-web3-blue/50 transition-all duration-300 flex items-center justify-center gap-2 mt-auto"
                 >
                   <Send className="w-4 h-4" />
                   Send Message
@@ -107,10 +108,10 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 50 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="space-y-6"
+            className="space-y-6 h-full flex flex-col"
           >
             {/* Location & Availability */}
-            <div className="glass rounded-2xl p-6 border border-white/10">
+            <div className="glass rounded-2xl p-6 border border-white/10 flex-1">
               <h3 className="text-xl font-bold mb-4">Availability</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
@@ -129,9 +130,9 @@ export default function ContactSection() {
             </div>
 
             {/* Quick Links */}
-            <div className="glass rounded-2xl p-6 border border-white/10">
+            <div className="glass rounded-2xl p-6 border border-white/10 flex-1">
               <h3 className="text-xl font-bold mb-4">Quick Connect</h3>
-              <div className="space-y-3">
+              <div className="space-y-3 h-full flex flex-col">
                 {[
                   { icon: Twitter, label: 'X', value: '@0xnimdal', link: 'https://x.com/0xnimdal' },
                   { icon: MessageCircle, label: 'Discord', value: '@nimdal', link: resumeData.links.discord },
