@@ -129,29 +129,86 @@ export default function Web3Experience() {
           })}
         </div>
 
-        {/* Stats */}
+        {/* Enhanced Stats Infographic */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6"
+          className="mt-20"
         >
-          {[
-            { label: 'Protocols Used', value: '30+', icon: Layers },
-            { label: 'Chains Explored', value: '10+', icon: Link2 },
-            { label: 'NFTs Collected', value: '200+', icon: Sparkles },
-            { label: 'Transactions', value: '3000+', icon: Coins },
-          ].map((stat, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="glass rounded-xl p-6 text-center border border-white/10"
-            >
-              <stat.icon className="w-8 h-8 mx-auto mb-2 text-web3-blue" />
-              <div className="text-2xl font-bold text-gradient">{stat.value}</div>
-              <div className="text-sm text-gray-400">{stat.label}</div>
-            </motion.div>
-          ))}
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-2">
+              <span className="text-gradient">Web3 Impact</span>
+            </h3>
+            <p className="text-gray-400">Real numbers, real engagement</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              {
+                label: 'Protocols Used',
+                value: '30+',
+                icon: Layers,
+                gradient: 'from-purple-500 to-pink-500',
+                description: 'DeFi & Infrastructure'
+              },
+              {
+                label: 'Chains Explored',
+                value: '10+',
+                icon: Link2,
+                gradient: 'from-blue-500 to-cyan-500',
+                description: 'Multi-chain Experience'
+              },
+              {
+                label: 'NFTs Collected',
+                value: '200+',
+                icon: Sparkles,
+                gradient: 'from-yellow-500 to-orange-500',
+                description: 'Digital Assets'
+              },
+              {
+                label: 'Transactions',
+                value: '3,000+',
+                icon: Coins,
+                gradient: 'from-green-500 to-teal-500',
+                description: 'On-chain Activity'
+              },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.9 + index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="relative group"
+              >
+                {/* Glow effect */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`} />
+
+                {/* Card */}
+                <div className="relative glass rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all duration-300">
+                  {/* Icon with gradient background */}
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${stat.gradient} p-4 shadow-lg`}>
+                    <stat.icon className="w-full h-full text-white" />
+                  </div>
+
+                  {/* Value */}
+                  <div className={`text-4xl font-black mb-2 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                    {stat.value}
+                  </div>
+
+                  {/* Label */}
+                  <div className="text-lg font-semibold text-white mb-2">{stat.label}</div>
+
+                  {/* Description */}
+                  <div className="text-sm text-gray-400">{stat.description}</div>
+
+                  {/* Decorative element */}
+                  <div className={`absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r ${stat.gradient} animate-pulse`} />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

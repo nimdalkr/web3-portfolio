@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Twitter, TrendingUp, Users, BarChart3, Calendar, MessageCircle } from 'lucide-react'
+import { Twitter, TrendingUp, Users, BarChart3, Calendar, MessageCircle, ExternalLink, Heart, Star, Trophy, Target, Award, Zap, CheckCircle } from 'lucide-react'
 import { resumeData } from '@/data/resume'
 
 export default function SocialInfluenceSection() {
@@ -49,23 +49,80 @@ export default function SocialInfluenceSection() {
               <p className="text-web3-cyan text-lg mb-4">{socialMediaInfluence.specialization}</p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-web3-blue mb-1">{socialMediaInfluence.followers}</div>
-                  <div className="text-sm text-gray-400">팔로워</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-web3-cyan mb-1">80,000+</div>
-                  <div className="text-sm text-gray-400">최대 인게이지먼트</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-web3-teal mb-1">53</div>
-                  <div className="text-sm text-gray-400">Yaps</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-web3-emerald mb-1">Emerging CT</div>
-                  <div className="text-sm text-gray-400">등급</div>
-                </div>
+                {[
+                  {
+                    value: socialMediaInfluence.followers,
+                    label: 'Followers',
+                    icon: Users,
+                    gradient: 'from-blue-500 to-cyan-500',
+                    bgColor: 'bg-blue-500/20'
+                  },
+                  {
+                    value: '80,000+',
+                    label: 'Max Engagement',
+                    icon: Heart,
+                    gradient: 'from-pink-500 to-red-500',
+                    bgColor: 'bg-pink-500/20'
+                  },
+                  {
+                    value: '53',
+                    label: 'Yaps',
+                    icon: Star,
+                    gradient: 'from-yellow-500 to-orange-500',
+                    bgColor: 'bg-yellow-500/20'
+                  },
+                  {
+                    value: 'Emerging CT',
+                    label: 'Grade',
+                    icon: Trophy,
+                    gradient: 'from-green-500 to-teal-500',
+                    bgColor: 'bg-green-500/20'
+                  }
+                ].map((stat, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={inView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
+                    className="relative group"
+                  >
+                    {/* Glow effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300`} />
+
+                    <div className={`relative ${stat.bgColor} rounded-xl p-6 border border-white/20 group-hover:border-white/40 transition-all duration-300`}>
+                      <div className={`w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r ${stat.gradient} p-3 flex items-center justify-center shadow-lg`}>
+                        <stat.icon className="w-full h-full text-white" />
+                      </div>
+                      <div className={`text-2xl font-bold mb-1 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
+                        {stat.value}
+                      </div>
+                      <div className="text-sm text-gray-300">{stat.label}</div>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
+
+              {/* X Feed Highlights CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.7 }}
+                className="mt-8 text-center"
+              >
+                <motion.a
+                  href="https://x.com/0xnimdal/highlights"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full font-semibold shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
+                >
+                  <Twitter className="w-5 h-5" />
+                  X Feed Highlights
+                  <ExternalLink className="w-5 h-5" />
+                </motion.a>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -136,23 +193,69 @@ export default function SocialInfluenceSection() {
               성장 마일스톤
             </h3>
             <div className="space-y-4">
-              {socialMediaInfluence.milestones.map((milestone, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={inView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
-                  className="flex items-center gap-4 p-3 rounded-lg hover:bg-white/5 transition-colors"
-                >
-                  <div className="w-3 h-3 rounded-full bg-web3-blue flex-shrink-0"></div>
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
-                      <span className="text-web3-cyan font-medium text-sm">{milestone.date}</span>
-                      <span className="text-gray-300 text-sm">{milestone.event}</span>
+              {socialMediaInfluence.milestones.map((milestone, index) => {
+                // 마일스톤 유형에 따른 아이콘 선택
+                const getIcon = (event: string) => {
+                  if (event.includes('시작') || event.includes('시작')) return Star
+                  if (event.includes('LEADERBOARD') || event.includes('위')) return Trophy
+                  if (event.includes('Yaps') || event.includes('돌파')) return Target
+                  if (event.includes('획득') || event.includes('CARD')) return Award
+                  if (event.includes('참여')) return Zap
+                  return CheckCircle
+                }
+
+                const getGradient = (index: number) => {
+                  const gradients = [
+                    'from-blue-500 to-cyan-500',
+                    'from-purple-500 to-pink-500',
+                    'from-green-500 to-teal-500',
+                    'from-yellow-500 to-orange-500',
+                    'from-red-500 to-pink-500',
+                    'from-indigo-500 to-purple-500',
+                    'from-cyan-500 to-blue-500',
+                    'from-teal-500 to-green-500',
+                    'from-orange-500 to-red-500'
+                  ]
+                  return gradients[index % gradients.length]
+                }
+
+                const Icon = getIcon(milestone.event)
+                const gradient = getGradient(index)
+
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={inView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                    whileHover={{ scale: 1.02, x: 5 }}
+                    className="group relative"
+                  >
+                    {/* Glow effect */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-lg blur-md opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
+
+                    <div className="relative flex items-center gap-4 p-4 rounded-lg border border-white/10 group-hover:border-white/30 transition-all duration-300 bg-white/5">
+                      {/* Icon */}
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${gradient} p-3 flex items-center justify-center shadow-lg flex-shrink-0`}>
+                        <Icon className="w-full h-full text-white" />
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                          <span className={`font-semibold text-sm bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
+                            {milestone.date}
+                          </span>
+                          <span className="text-gray-200 text-sm font-medium">{milestone.event}</span>
+                        </div>
+                      </div>
+
+                      {/* Decorative element */}
+                      <div className={`w-2 h-2 rounded-full bg-gradient-to-r ${gradient} animate-pulse flex-shrink-0`} />
                     </div>
-                  </div>
-                </motion.div>
-              ))}
+                  </motion.div>
+                )
+              })}
             </div>
           </motion.div>
         </div>
