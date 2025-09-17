@@ -77,6 +77,10 @@ export default function Home() {
                     <span className="text-gray-400">병역</span>
                     <span>{resumeData.personalInfo.militaryService}</span>
                   </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">봉사시간</span>
+                    <span>{resumeData.personalInfo.volunteerHours}</span>
+                  </div>
                 </div>
               </motion.div>
 

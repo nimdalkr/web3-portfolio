@@ -18,6 +18,7 @@ export const resumeData = {
     nationality: "대한민국",
     maritalStatus: "미혼",
     militaryService: "해군 만기전역",
+    volunteerHours: "2000+",
     bloodType: "B형",
     hobbies: ["블록체인 리서치", "Web3 트렌드 분석", "커뮤니티 활동", "InfoFi 데이터 분석", "플랫폼 개발/기획", "AI"],
     personality: ["도전적", "협업지향적", "분석적", "커뮤니케이션"]

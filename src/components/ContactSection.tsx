@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { useState } from 'react'
-import { Send, Mail, MessageCircle, Twitter, Github, Linkedin } from 'lucide-react'
+import { Send, MessageCircle, Twitter, Github, Linkedin } from 'lucide-react'
 import { resumeData } from '@/data/resume'
 
 export default function ContactSection() {
@@ -20,8 +20,13 @@ export default function ContactSection() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Handle form submission
+    // Create mailto link with form data
+    const subject = encodeURIComponent('Portfolio Contact Form')
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )
+    const mailtoLink = `mailto:0xnimdal@gmail.com?subject=${subject}&body=${body}`
+    window.open(mailtoLink, '_blank')
   }
 
   return (
@@ -128,8 +133,8 @@ export default function ContactSection() {
               <h3 className="text-xl font-bold mb-4">Quick Connect</h3>
               <div className="space-y-3">
                 {[
-                  { icon: Mail, label: 'Email', value: resumeData.email, link: resumeData.links.email },
-                  { icon: MessageCircle, label: 'Discord', value: resumeData.links.discord, link: resumeData.links.discord },
+                  { icon: Twitter, label: 'X', value: '@0xnimdal', link: 'https://x.com/0xnimdal' },
+                  { icon: MessageCircle, label: 'Discord', value: '@nimdal', link: resumeData.links.discord },
                   { icon: Send, label: 'Telegram', value: '@nimdal', link: resumeData.links.telegram },
                 ].map((item, index) => (
                   <motion.a
