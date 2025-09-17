@@ -91,29 +91,26 @@ export default function Home() {
                 <h3 className="text-xl font-bold mb-4 text-web3-cyan">프로페셔널 소개</h3>
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   <p>
-                    안녕하세요, <span className="text-web3-blue font-semibold">탁찬우</span>입니다. 
-                    저는 <span className="text-web3-cyan">창업 경험</span>과 <span className="text-web3-blue">다양한 마케팅 스킬</span>을 보유한 
-                    Web3 마케터로, 블록체인 생태계에서의 지속적인 성장과 혁신을 추구합니다.
+                    안녕하세요, Web3에서 제2의 커리어를 만들어가고 있는 마케터 <span className="text-web3-blue font-semibold">탁찬우</span>입니다.
                   </p>
-                  
+
                   <p>
-                    2012년 마코랑랩을 창업하여 CSR 마케팅 플랫폼을 운영했고, 
-                    2018년부터는 엠케이알(MKR)을 설립하여 온라인 광고대행, 웹 에이전시, MCN 운영 등 
-                    다양한 디지털 마케팅 사업을 전개했습니다.
+                    저는 <span className="text-web3-cyan font-semibold">2012년 CSR 마케팅 플랫폼 '마코랑랩' 창업</span>을 시작으로 Web2 마케팅에 입문했습니다.
+                    <span className="text-web3-cyan font-semibold">2018년</span>에는 온라인 마케팅 에이전시 <span className="text-web3-blue font-semibold">'MKR'을 설립</span>하여
+                    온라인 광고부터 MCN 인플루언서 마케팅, 옥외광고, 플랫폼 개발까지 총괄하며 비즈니스 성장의 핵심을 경험했습니다.
                   </p>
-                  
+
                   <p>
-                    최근 1년간 <span className="text-web3-cyan font-semibold">Web3 생태계</span>에 깊이 참여하며 
-                    Ethereum, Solana, Bitcoin L2, Multi-chain 프로젝트들을 경험했고, 
-                    현재는 <span className="text-web3-cyan font-semibold">071랩스</span>에서 
-                    커뮤니티 매니저로 Web2와 Web3를 연결하는 브릿지 역할을 수행하고 있습니다.
+                    이러한 Web2에서의 창업과 비즈니스 경험을 바탕으로 최근 <span className="text-web3-cyan font-semibold">Web3의 가능성을 발견</span>했고,
+                    지난 1년간 <span className="text-web3-blue font-semibold">Ethereum, Solana, Bitcoin L2</span> 등 다양한 체인의 여러 프로젝트에 참여하며
+                    Web3 생태계 경험을 키웠습니다. 현재는 <span className="text-web3-cyan font-semibold">071랩스의 CM</span>으로서 역할을 수행하고 있습니다.
                   </p>
-                  
+
                   <p>
-                    동시에 <span className="text-web3-blue font-semibold">@0xnimdal</span> 트위터 계정으로 
-                    <span className="text-web3-cyan font-semibold">8,000+ 팔로워</span>를 보유한 Web3 KOL로 활동하며, 
-                    Kaito 생태계 중심의 콘텐츠 제작과 프로젝트 분석을 통해 
-                    평균 300-500 인게이지먼트를 기록하고 있습니다.
+                    또한, <span className="text-web3-cyan font-semibold">8,000명 이상의 팔로워</span>와 함께하는
+                    트위터(<span className="text-web3-blue font-semibold">@0xnimdal</span>)를 통해
+                    <span className="text-web3-cyan font-semibold">Kaito 생태계 중심의 인사이트</span>와 생태계 참여를 하며,
+                    평균 300-500의 인게이지먼트, 최대 80,000의 인게이지먼트를 기록하는 등 Web3 유저로서도 활발히 활동 중입니다.
                   </p>
                 </div>
               </motion.div>
