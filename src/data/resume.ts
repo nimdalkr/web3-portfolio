@@ -265,14 +265,12 @@ export const resumeData = {
       "Trend Analysis & Research"
     ],
     web3: [
-      "DeFi Protocol 이해 및 활용",
-      "NFT 마켓플레이스 운영",
-      "DAO 거버넌스 참여",
+      "DeFi Protocol 활용",
       "커뮤니티 구축 및 운영",
       "Discord 서버 관리",
       "Telegram 채널 운영",
       "Web3 마케팅 전략 수립",
-      "암호화폐 트레이딩",
+      "CEX/DEX 트레이딩",
       "KOL 활동 및 네트워킹",
       "콘텐츠 제작 및 배포"
     ],
