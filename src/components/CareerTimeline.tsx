@@ -103,16 +103,16 @@ export default function CareerTimeline() {
 
                     <div className="space-y-2">
                       {exp.achievements.map((achievement, idx) => (
-                        <div key={idx} className={`flex items-start gap-2 ${isLeft ? 'md:text-right' : ''}`}>
+                        <div key={idx} className={`flex items-center gap-2 ${isLeft ? 'md:text-right' : ''}`}>
                           {isLeft ? (
                             <>
                               <span className="text-sm text-gray-400 flex-1 md:text-right">{achievement}</span>
-                              <span className="text-web3-cyan mt-1 flex-shrink-0 hidden md:block">◂</span>
-                              <span className="text-web3-cyan mt-1 flex-shrink-0 md:hidden">▸</span>
+                              <span className="text-web3-cyan flex-shrink-0 hidden md:block">◂</span>
+                              <span className="text-web3-cyan flex-shrink-0 md:hidden">▸</span>
                             </>
                           ) : (
                             <>
-                              <span className="text-web3-cyan mt-1 flex-shrink-0">▸</span>
+                              <span className="text-web3-cyan flex-shrink-0">▸</span>
                               <span className="text-sm text-gray-400 flex-1">{achievement}</span>
                             </>
                           )}

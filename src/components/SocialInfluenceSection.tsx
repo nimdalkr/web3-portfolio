@@ -130,7 +130,7 @@ export default function SocialInfluenceSection() {
                   className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-full font-semibold shadow-lg hover:shadow-blue-500/50 transition-all duration-300"
                 >
                   <XIcon className="w-5 h-5" />
-                  X Feed Highlights
+                  Feed Highlights
                   <ExternalLink className="w-5 h-5" />
                 </motion.a>
               </motion.div>
