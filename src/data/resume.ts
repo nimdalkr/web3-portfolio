@@ -252,23 +252,16 @@ export const resumeData = {
   skills: {
     marketing: [
       "Community Management",
-      "KOL Marketing", 
-      "Influencer Marketing",
-      "Performance Marketing",
+      "Influencer/KOL Marketing",
       "Content Marketing",
+      "Digital & Performance Marketing",
       "Brand Strategy",
       "Growth Hacking",
-      "Social Media Marketing",
       "Viral Marketing",
       "B2B/B2C Marketing",
-      "Digital Marketing",
-      "Blog Marketing",
       "Partnership Marketing",
       "Hospital Marketing",
       "CRM Marketing",
-      "Ad Planning & Creation",
-      "Twitter/X Content Strategy",
-      "Engagement Optimization",
       "Trend Analysis & Research"
     ],
     web3: [
