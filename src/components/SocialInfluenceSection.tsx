@@ -156,9 +156,9 @@ export default function SocialInfluenceSection() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.5 + index * 0.1 }}
-                    className="flex items-start gap-3"
+                    className="flex items-center gap-3"
                   >
-                    <span className="text-web3-cyan mt-1 flex-shrink-0">▸</span>
+                    <span className="text-web3-cyan flex-shrink-0">▸</span>
                     <span className="text-sm text-gray-300">{achievement}</span>
                   </motion.div>
                 ))}
