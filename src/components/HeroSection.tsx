@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { TypeAnimation } from 'react-type-animation'
 import { ChevronDown, Github, Twitter, Send, Linkedin, Mail } from 'lucide-react'
 import ParticleBackground from './ParticleBackground'
+import AnimatedName from './AnimatedName'
 import { resumeData } from '@/data/resume'
 
 export default function HeroSection() {
@@ -87,7 +88,7 @@ export default function HeroSection() {
             transition={{ delay: 0.4 }}
             className="text-6xl md:text-8xl font-bold mb-4"
           >
-            <span className="text-gradient">{resumeData.name}</span>
+            <AnimatedName />
           </motion.h1>
 
           <motion.div
