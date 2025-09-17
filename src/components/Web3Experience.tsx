@@ -87,7 +87,7 @@ export default function Web3Experience() {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-web3-blue/20 to-web3-blue/20 rounded-xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
-                <div className="relative glass rounded-xl p-6 border border-white/10 hover:border-web3-blue/50 transition-all duration-300">
+                <div className="relative glass rounded-xl p-6 border border-gray-200 dark:border-white/10 hover:border-web3-blue/50 transition-all duration-300">
                   <div className="flex items-start justify-between mb-4">
                     <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
                       {logoSrc ? (
@@ -105,12 +105,12 @@ export default function Web3Experience() {
                     </span>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-1">{exp.project}</h3>
+                  <h3 className="text-xl font-bold mb-1 text-gray-900 dark:text-white">{exp.project}</h3>
                   <p className="text-sm text-web3-blue mb-2">{exp.type}</p>
-                  <p className="text-gray-400 text-sm mb-3">{exp.description}</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm mb-3">{exp.description}</p>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">{exp.role}</span>
+                    <span className="text-xs text-gray-600 dark:text-gray-500">{exp.role}</span>
                     <motion.div
                       animate={{ rotate: [0, 360] }}
                       transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
@@ -118,8 +118,8 @@ export default function Web3Experience() {
                     />
                   </div>
 
-                  <div className="mt-4 pt-4 border-t border-white/10">
-                    <p className="text-xs text-gray-400">
+                  <div className="mt-4 pt-4 border-t border-gray-200 dark:border-white/10">
+                    <p className="text-xs text-gray-600 dark:text-gray-400">
                       ✨ {exp.achievement}
                     </p>
                   </div>
@@ -186,7 +186,7 @@ export default function Web3Experience() {
                 <div className={`absolute inset-0 bg-gradient-to-r ${stat.gradient} rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300`} />
 
                 {/* Card */}
-                <div className="relative glass rounded-2xl p-8 border border-white/20 hover:border-white/40 transition-all duration-300">
+                <div className="relative glass rounded-2xl p-8 border border-gray-200 dark:border-white/20 hover:border-gray-300 dark:hover:border-white/40 transition-all duration-300">
                   {/* Icon with gradient background */}
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${stat.gradient} p-4 shadow-lg`}>
                     <stat.icon className="w-full h-full text-white" />
@@ -198,10 +198,10 @@ export default function Web3Experience() {
                   </div>
 
                   {/* Label */}
-                  <div className="text-lg font-semibold text-white mb-2">{stat.label}</div>
+                  <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{stat.label}</div>
 
                   {/* Description */}
-                  <div className="text-sm text-gray-400">{stat.description}</div>
+                  <div className="text-sm text-gray-600 dark:text-gray-400">{stat.description}</div>
 
                   {/* Decorative element */}
                   <div className={`absolute top-4 right-4 w-3 h-3 rounded-full bg-gradient-to-r ${stat.gradient} animate-pulse`} />

@@ -97,7 +97,7 @@ export default function SocialInfluenceSection() {
                       <div className={`text-2xl font-bold mb-1 bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}>
                         {stat.value}
                       </div>
-                      <div className="text-sm text-gray-300">{stat.label}</div>
+                      <div className="text-sm text-gray-600 dark:text-gray-300">{stat.label}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -234,7 +234,7 @@ export default function SocialInfluenceSection() {
                     {/* Glow effect */}
                     <div className={`absolute inset-0 bg-gradient-to-r ${gradient} rounded-lg blur-md opacity-0 group-hover:opacity-20 transition-opacity duration-300`} />
 
-                    <div className="relative flex items-center gap-4 p-4 rounded-lg border border-white/10 group-hover:border-white/30 transition-all duration-300 bg-white/5">
+                    <div className="relative flex items-center gap-4 p-4 rounded-lg border border-gray-200 dark:border-white/10 group-hover:border-gray-300 dark:group-hover:border-white/30 transition-all duration-300 bg-gray-50 dark:bg-white/5">
                       {/* Icon */}
                       <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${gradient} p-3 flex items-center justify-center shadow-lg flex-shrink-0`}>
                         <Icon className="w-full h-full text-white" />
@@ -246,7 +246,7 @@ export default function SocialInfluenceSection() {
                           <span className={`font-semibold text-sm bg-gradient-to-r ${gradient} bg-clip-text text-transparent`}>
                             {milestone.date}
                           </span>
-                          <span className="text-gray-200 text-sm font-medium">{milestone.event}</span>
+                          <span className="text-gray-800 dark:text-gray-200 text-sm font-medium">{milestone.event}</span>
                         </div>
                       </div>
 
