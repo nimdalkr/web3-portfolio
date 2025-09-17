@@ -157,29 +157,6 @@ export default function ContactSection() {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div className="glass rounded-2xl p-6 border border-white/10">
-              <h3 className="text-xl font-bold mb-4">Social Presence</h3>
-              <div className="flex gap-3">
-                {[
-                  { icon: Twitter, link: resumeData.links.twitter },
-                  { icon: Github, link: resumeData.links.github },
-                  { icon: Linkedin, link: resumeData.links.linkedin },
-                ].map((social, index) => (
-                  <motion.a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.1, rotate: 360 }}
-                    transition={{ type: 'spring' }}
-                    className="w-12 h-12 rounded-lg bg-gradient-to-br from-web3-blue/20 to-web3-blue/20 flex items-center justify-center hover:from-web3-blue/30 hover:to-web3-blue/30 transition-colors"
-                  >
-                    <social.icon className="w-5 h-5" />
-                  </motion.a>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

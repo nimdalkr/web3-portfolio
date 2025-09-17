@@ -190,7 +190,7 @@ export default function HeroSection() {
             opacity: { delay: 1.6 },
             y: { duration: 2, repeat: Infinity, ease: 'easeInOut' },
           }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-16 left-1/2 transform -translate-x-1/2"
         >
           <ChevronDown className="w-6 h-6 text-web3-blue" />
         </motion.div>

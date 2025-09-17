@@ -70,8 +70,8 @@ export default function Home() {
                     <span>{resumeData.personalInfo.location}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-400">국적</span>
-                    <span>{resumeData.personalInfo.nationality}</span>
+                    <span className="text-gray-400">학력</span>
+                    <span>동명대학교 중퇴</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-400">병역</span>
@@ -192,7 +192,7 @@ export default function Home() {
       <footer className="py-8 border-t border-white/10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © 2024 Chanwoo Tak. Building the future of Web3.
+            © 2025 Chanwoo Tak. Building the future of Web3.
           </p>
         </div>
       </footer>
