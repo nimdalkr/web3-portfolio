@@ -1,14 +1,14 @@
-# 🚀 Chanwoo Tak - Web3 Portfolio
+# Chanwoo Tak - Web3 Portfolio
 
-창의적이고 인터랙티브한 Web3 포트폴리오 사이트입니다. 전통적인 마케팅 경험과 Web3 생태계를 연결하는 브릿지 역할을 수행하는 마케터의 이력을 소개합니다.
+Interactive Web3 portfolio website showcasing marketing expertise and blockchain ecosystem experience.
 
-## ✨ Features
+## Features
 
-- 🎨 **인터랙티브 디자인**: Framer Motion을 활용한 부드러운 애니메이션
-- 🌙 **다크 모드**: Web3 스타일의 어두운 테마
-- 📱 **반응형 디자인**: 모든 디바이스에서 완벽한 레이아웃
-- 🔗 **Web3 Integration**: 지갑 연결 기능 (예시)
-- 🎯 **섹션 구성**:
+- **Interactive Design**: Smooth animations powered by Framer Motion
+- **Dark Mode**: Web3-styled dark theme
+- **Responsive Design**: Perfect layout across all devices
+- **Web3 Integration**: Wallet connection functionality
+- **Section Components**:
   - Hero Section with Particle Effects
   - About Me
   - Web3 Experience Cards
@@ -16,7 +16,7 @@
   - Skills Visualization
   - Contact with Web3 Connect
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14
 - **Language**: TypeScript
@@ -25,7 +25,7 @@
 - **3D Effects**: Three.js
 - **Icons**: Lucide React
 
-## 🚀 Quick Start
+## Quick Start
 
 ```bash
 # Install dependencies
@@ -41,7 +41,7 @@ npm run build
 npm run start
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 web3-portfolio/
@@ -53,6 +53,7 @@ web3-portfolio/
 │   ├── components/
 │   │   ├── Navigation.tsx
 │   │   ├── HeroSection.tsx
+│   │   ├── AnimatedName.tsx
 │   │   ├── ParticleBackground.tsx
 │   │   ├── Web3Experience.tsx
 │   │   ├── CareerTimeline.tsx
@@ -66,7 +67,7 @@ web3-portfolio/
 └── next.config.js
 ```
 
-## 🎨 Design Features
+## Design Features
 
 ### Gradient Effects
 - Purple to Cyan gradients representing Web3 aesthetics
@@ -78,16 +79,17 @@ web3-portfolio/
 - Hover animations on cards
 - Smooth scroll transitions
 - Type animation for titles
+- Animated name transitions (Takchanwoo ↔ Nimdal)
 
 ### Glass Morphism
 - Transparent glass effect cards
 - Backdrop blur for depth
 - Subtle borders with opacity
 
-## 📊 Key Sections
+## Key Sections
 
 ### 1. **Hero Section**
-- Animated name introduction
+- Animated name introduction with 3D rotation effects
 - Dynamic typing effect for roles
 - Social media links
 - Call-to-action buttons
@@ -116,13 +118,13 @@ web3-portfolio/
 - Social media integration
 - Quick connect options
 
-## 🔗 Live Demo
+## Live Demo
 
 Visit: `http://localhost:3000` after running the development server
 
-## 📝 Customization
+## Customization
 
-이력서 정보를 수정하려면 `src/data/resume.ts` 파일을 편집하세요:
+To modify resume information, edit the `src/data/resume.ts` file:
 
 ```typescript
 export const resumeData = {
@@ -132,17 +134,14 @@ export const resumeData = {
 }
 ```
 
-## 🤝 Contact
+## Contact
 
-- **Email**: tri********@gmail.com
-- **Location**: 부산 수영구
-- **Discord**: chanwoo#0001
-- **Telegram**: @chanwoo_tak
+- **Telegram**: nimdal
 
-## 📄 License
+## License
 
 MIT License - feel free to use this template for your own portfolio!
 
 ---
 
-Built with ❤️ for the Web3 community
+Built for the Web3 community
