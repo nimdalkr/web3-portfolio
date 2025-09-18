@@ -120,49 +120,6 @@ export default function Home() {
               </motion.div>
             </div>
 
-            {/* Personality & Hobbies */}
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                viewport={{ once: true }}
-                className="glass rounded-2xl p-6 border border-white/10"
-              >
-                <h3 className="text-xl font-bold mb-4 text-web3-teal">성격 & 특징</h3>
-                <div className="flex flex-wrap gap-2">
-                  {resumeData.personalInfo.personality.map((trait, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-gradient-to-r from-web3-teal/20 to-web3-blue/20 rounded-full text-sm border border-web3-teal/30"
-                    >
-                      {trait}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                viewport={{ once: true }}
-                className="glass rounded-2xl p-6 border border-white/10"
-              >
-                <h3 className="text-xl font-bold mb-4 text-web3-emerald">관심사 & 취미</h3>
-                <div className="flex flex-wrap gap-2">
-                  {resumeData.personalInfo.hobbies.map((hobby, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-gradient-to-r from-web3-emerald/20 to-web3-cyan/20 rounded-full text-sm border border-web3-emerald/30"
-                    >
-                      {hobby}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            </div>
-
           </motion.div>
         </div>
       </section>

@@ -56,7 +56,14 @@ export default function SocialInfluenceSection() {
             </div>
             
             <div className="text-center mb-8">
-              <h3 className="text-3xl font-bold mb-2">{socialMediaInfluence.handle}</h3>
+              <a
+                href="https://x.com/0xnimdal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl font-bold mb-2 hover:text-web3-cyan transition-colors duration-300 cursor-pointer inline-block"
+              >
+                {socialMediaInfluence.handle}
+              </a>
               <p className="text-web3-cyan text-lg mb-4">{socialMediaInfluence.specialization}</p>
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -192,11 +199,104 @@ export default function SocialInfluenceSection() {
             </motion.div>
           </div>
 
-          {/* Growth Timeline */}
+          {/* Featured Twitter Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.8 }}
+            className="glass rounded-2xl p-6 border border-white/10 mt-8"
+          >
+            <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
+              <Star className="w-6 h-6 text-yellow-500" />
+              대표 콘텐츠
+            </h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "카이토라는 플랫폼에 토큰이 필요했을까?",
+                  url: "https://x.com/0xnimdal/status/1963447847430623443"
+                },
+                {
+                  title: "카이토 리더보드 개선이 다시한번 이루어지길 바라며",
+                  url: "https://x.com/0xnimdal/status/1962362647833444860"
+                },
+                {
+                  title: "앞으로는 Web2 유저를 타겟팅한 InfoFi가 필요할 때",
+                  url: "https://x.com/0xnimdal/status/1960581954694451493"
+                },
+                {
+                  title: "카이토 & Web3 마케팅, 이제는 정말 바뀌어야 할 때",
+                  url: "https://x.com/0xnimdal/status/1957345296494768637"
+                },
+                {
+                  title: "하꼬 Yapper라면 꼭 읽어보세요!",
+                  url: "https://x.com/0xnimdal/status/1939982586253852680"
+                },
+                {
+                  title: "지금의 카이토가 제시하는 InfoFi에 대해",
+                  url: "https://x.com/0xnimdal/status/1939024810342002932"
+                },
+                {
+                  title: "카이토가 수집해가는 '내 데이터'는 어떤 것들이 있을까?",
+                  url: "https://x.com/0xnimdal/status/1938464252848996811"
+                },
+                {
+                  title: "카이토가 Inner CT, 스마트팔로워를 분류하는 방법?",
+                  url: "https://x.com/0xnimdal/status/1938125178472698091"
+                },
+                {
+                  title: "카이토는 어떤 방식으로 내 트윗을 판단하고 있을까?",
+                  url: "https://x.com/0xnimdal/status/1935904073951379872"
+                },
+                {
+                  title: "카이토 Mindshare 산출 공식 분석",
+                  url: "https://x.com/0xnimdal/status/1934472549280428434"
+                },
+                {
+                  title: "신규 야퍼들이 꼭 읽기를 바라면서 쓴 글",
+                  url: "https://x.com/0xnimdal/status/1933060750282797403"
+                }
+              ].map((content, index) => (
+                <motion.a
+                  key={index}
+                  href={content.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.9 + index * 0.05 }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  className="group relative"
+                >
+                  {/* Glow effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  <div className="relative p-4 rounded-lg border border-gray-200 dark:border-white/10 group-hover:border-blue-500/50 transition-all duration-300 bg-gray-50 dark:bg-white/5 hover:bg-gray-100 dark:hover:bg-white/10 h-full flex flex-col">
+                    <div className="flex items-start gap-3 flex-1">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 p-2 flex items-center justify-center flex-shrink-0">
+                        <XIcon className="w-full h-full text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0 flex flex-col">
+                        <h4 className="text-sm font-medium text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 flex-1">
+                          {content.title}
+                        </h4>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 flex items-center gap-1">
+                          <ExternalLink className="w-3 h-3" />
+                          트위터에서 보기
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Growth Timeline */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 1.0 }}
             className="glass rounded-2xl p-6 border border-white/10 mt-8"
           >
             <h3 className="text-2xl font-bold mb-6 flex items-center gap-3">
@@ -238,7 +338,7 @@ export default function SocialInfluenceSection() {
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={inView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.4, delay: 0.9 + index * 0.1 }}
+                    transition={{ duration: 0.4, delay: 1.1 + index * 0.1 }}
                     whileHover={{ scale: 1.02, x: 5 }}
                     className="group relative"
                   >

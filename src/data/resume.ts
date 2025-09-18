@@ -38,6 +38,22 @@ export const resumeData = {
 
   experience: [
     {
+      company: "알파를 듀오",
+      position: "KOL",
+      period: "2025.03 - 현재",
+      duration: "재직중",
+      type: "Web3",
+      description: "Web3 Airdrop / NFT 텔레그램 채널 운영",
+      achievements: [
+        "Web3/NFT 프로젝트 협업",
+        "트위터/텔레그램 KOL 마케팅 컨설팅",
+        "1minute 커뮤니티 팀원 H2ya와 공동 운영",
+        "유튜브 운영 준비중"
+      ],
+      tags: ["KOL", "Telegram", "Web3", "NFT", "Marketing"],
+      link: "https://t.me/alpha_duo"
+    },
+    {
       company: "071랩스",
       position: "Community Manager",
       period: "2025.01 - 현재",
@@ -51,7 +67,8 @@ export const resumeData = {
         "글로벌 커뮤니티 관리 및 CM 팀 운영",
         "Discord, Telegram 커뮤니티 활성화"
       ],
-      tags: ["Community", "Web3", "KOL", "Discord", "Telegram"]
+      tags: ["Community", "Web3", "KOL", "Discord", "Telegram"],
+      link: "https://www.071labs.io/"
     },
     {
       company: "북부산JC",
@@ -67,7 +84,8 @@ export const resumeData = {
         "2023 지역교류분과 위원장",
         "2024 지역교류분과 담당이사"
       ],
-      tags: ["Leadership", "Community", "Organization", "Networking"]
+      tags: ["Leadership", "Community", "Organization", "Networking"],
+      link: "https://www.bukbusanjc.or.kr/"
     },
     {
       company: "엠케이알 (MKR)",
@@ -97,7 +115,8 @@ export const resumeData = {
         "넥센그룹 강병중 회장을 포함한 부산 지역 중견기업 임원진을 이사진으로 영입, 이사회 구성 완료",
         "땀바봉사단 단장 (2019~2024)"
       ],
-      tags: ["Non-Profit", "Social Impact", "Leadership", "Community"]
+      tags: ["Non-Profit", "Social Impact", "Leadership", "Community"],
+      link: "https://www.ibaboclub.com/"
     },
     {
       company: "마코랑(주)",
@@ -111,7 +130,8 @@ export const resumeData = {
         "Web2 플랫폼 개발",
         "마케팅 프로그램 기획 / 운영"
       ],
-      tags: ["Marketing", "Web2", "Agency", "Platform"]
+      tags: ["Marketing", "Web2", "Agency", "Platform"],
+      link: "http://makorang.com/"
     },
     {
       company: "마코랑랩",
@@ -159,7 +179,6 @@ export const resumeData = {
       { date: "2025년 4월", event: "MSU KAITO LEADERBOARD 12위" },
       { date: "2025년 5월", event: "첫 Yaps 획득" },
       { date: "2025년 7월", event: "UXLINK KAITO LEADERBOARD 1위" },
-      { date: "2025년 8월", event: "Yaps 50점 돌파" },
       { date: "2025년 8월", event: "KAITO COMMUNITY LEADERBOARD 5위" },
       { date: "2025년 9월", event: "STORY COMMUNITY LEADERBOARD 3위" },
       { date: "2025년 9월", event: "MONAD CARD S2 획득" }

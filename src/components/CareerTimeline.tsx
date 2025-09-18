@@ -2,11 +2,12 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Calendar, Building2, TrendingUp, Users, Rocket, Heart, MessageCircle } from 'lucide-react'
+import { Calendar, Building2, TrendingUp, Users, Rocket, Heart, MessageCircle, ExternalLink } from 'lucide-react'
 import { resumeData } from '@/data/resume'
 
 // 회사별 로고 매핑
 const companyLogos: { [key: string]: string } = {
+  '알파를 듀오': '/alphaduo.jpg',
   '071랩스': '/071.jpg',
   '북부산JC': '/jci.png',
   '엠케이알 (MKR)': '/mkr.png',
@@ -90,7 +91,19 @@ export default function CareerTimeline() {
                       </span>
                     </div>
 
-                    <h3 className={`text-2xl font-bold mb-1 ${isLeft ? 'md:text-right' : ''}`}>{exp.company}</h3>
+                    <div className={`flex items-center gap-2 mb-1 ${isLeft ? 'md:justify-end' : ''}`}>
+                      <h3 className="text-2xl font-bold">{exp.company}</h3>
+                      {(exp as any).link && (
+                        <a
+                          href={(exp as any).link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-web3-blue/20 hover:bg-web3-blue/40 transition-all duration-300 group"
+                        >
+                          <ExternalLink className="w-3 h-3 text-web3-blue group-hover:text-white transition-colors duration-300" />
+                        </a>
+                      )}
+                    </div>
                     <p className={`text-web3-blue mb-2 ${isLeft ? 'md:text-right' : ''}`}>{exp.position}</p>
                     
                     <div className={`flex items-center gap-2 mb-3 text-sm text-gray-400 ${isLeft ? 'md:justify-end' : ''}`}>
