@@ -1,0 +1,102 @@
+{
+  "navigation": {
+    "about": "About",
+    "web3": "Web3 Experience",
+    "career": "Career",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "name": "Chanwoo Tak",
+    "title": "Web3 Marketing Specialist & Community Builder",
+    "subtitle": "A marketer building a second career in Web3",
+    "description": "With 10+ years of Web2 marketing experience and innovative approaches in the Web3 ecosystem, I drive growth for blockchain communities and projects."
+  },
+  "about": {
+    "title": "About Me",
+    "personalInfo": "Personal Info",
+    "professionalSummary": "Professional Summary",
+    "fields": {
+      "name": "Name",
+      "nickname": "Nickname",
+      "birthDate": "Birth Date",
+      "age": "Age",
+      "location": "Location",
+      "education": "Education",
+      "militaryService": "Military Service",
+      "volunteerHours": "Volunteer Hours"
+    },
+    "bio": {
+      "intro": "Hello, I'm Chanwoo Tak, a marketer building a second career in Web3.",
+      "founding": "I entered Web2 marketing starting with the founding of the CSR marketing platform 'Makorang Lab' in 2012. In 2018, I established the online marketing agency 'MKR' and gained core business growth experience by overseeing everything from online advertising to MCN influencer marketing, outdoor advertising, and platform development.",
+      "web3Journey": "Based on this Web2 startup and business experience, I recently discovered the potential of Web3 and have been building Web3 ecosystem experience over the past year by participating in various projects across different chains including Ethereum, Solana, and Bitcoin L2. I currently serve as a CM at 071 Labs.",
+      "influence": "Additionally, I actively engage as a Web3 user through Twitter (@0xnimdal) with over 8,000 followers, sharing Kaito ecosystem-centered insights and ecosystem participation, recording average engagement of 300-500 and maximum engagement of 80,000."
+    }
+  },
+  "web3Experience": {
+    "title": "Web3 Experience",
+    "subtitle": "Diverse project participation experience in the blockchain ecosystem",
+    "featuredProjects": "Featured Projects",
+    "otherProjects": "Other Projects",
+    "totalProjects": "100+ Projects Participated",
+    "categories": {
+      "InfoFi": "InfoFi",
+      "SocialFi": "SocialFi",
+      "DeFi": "DeFi",
+      "NFT": "NFT",
+      "GameFi": "GameFi",
+      "AI": "AI",
+      "Meme": "Meme",
+      "L2": "L2"
+    },
+    "viewProject": "View Project"
+  },
+  "career": {
+    "title": "Career Journey",
+    "subtitle": "From traditional marketing to Web3 innovation"
+  },
+  "socialInfluence": {
+    "title": "Social Media Influence",
+    "subtitle": "Web3 content creation and community influence",
+    "specialization": "Web3 ecosystem analysis and content creation",
+    "followers": "Followers",
+    "maxEngagement": "Max Engagement",
+    "yaps": "Yaps",
+    "grade": "Grade",
+    "achievements": "Key Achievements",
+    "contentTypes": "Content Types",
+    "featuredContent": "Featured Content",
+    "growthMilestones": "Growth Milestones",
+    "viewOnTwitter": "View on Twitter",
+    "feedHighlights": "Feed Highlights"
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Professional capabilities in Web3 and marketing"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Ready to build the future of Web3 together",
+    "sendMessage": "Send a Message",
+    "availability": "Availability",
+    "quickConnect": "Quick Connect",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "namePlaceholder": "Your name",
+      "emailPlaceholder": "your@email.com",
+      "messagePlaceholder": "Tell me about your project...",
+      "send": "Send Message"
+    },
+    "status": {
+      "available": "Available for new opportunities",
+      "remote": "Remote & On-site work",
+      "web3Focused": "Web3 & Blockchain focused"
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Chanwoo Tak. Building the future of Web3."
+  }
+}

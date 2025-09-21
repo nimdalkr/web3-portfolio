@@ -2,9 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Download, Moon, Sun } from 'lucide-react'
+import { Menu, X, Download, Moon, Sun, Globe } from 'lucide-react'
+import { useTranslations } from 'next-intl'
+import { useRouter, usePathname } from 'next/navigation'
 
 export default function Navigation() {
+  const t = useTranslations('navigation');
+  const router = useRouter();
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isDark, setIsDark] = useState(true)
@@ -40,14 +45,22 @@ export default function Navigation() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
+  const currentLocale = pathname.split('/')[1] || 'ko';
+
   const menuItems = [
-    { label: 'About', href: '#about' },
-    { label: 'Web3', href: '#web3' },
-    { label: 'Career', href: '#career' },
+    { label: t('about'), href: '#about' },
+    { label: t('web3'), href: '#web3' },
+    { label: t('career'), href: '#career' },
     { label: 'Social', href: '#social-influence' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Contact', href: '#contact' },
+    { label: t('skills'), href: '#skills' },
+    { label: t('contact'), href: '#contact' },
   ]
+
+  const toggleLanguage = () => {
+    const newLocale = currentLocale === 'ko' ? 'en' : 'ko';
+    const newPathname = pathname.replace(`/${currentLocale}`, `/${newLocale}`);
+    router.push(newPathname);
+  };
 
   const downloadResume = () => {
     // 이력서 PDF 다운로드 또는 인쇄 페이지로 이동
@@ -121,6 +134,16 @@ export default function Navigation() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={toggleLanguage}
+              className="p-2 glass rounded-lg border border-white/10 hover:border-web3-blue/50 transition-colors"
+              title={currentLocale === 'ko' ? 'English' : '한국어'}
+            >
+              <Globe className="w-5 h-5" />
+            </motion.button>
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
               className="p-2 glass rounded-lg border border-white/10 hover:border-web3-blue/50 transition-colors"
             >
@@ -165,14 +188,24 @@ export default function Navigation() {
                 {item.label}
               </motion.a>
             ))}
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              onClick={downloadResume}
-              className="w-full px-4 py-2 bg-gradient-to-r from-web3-blue to-web3-blue rounded-lg font-semibold flex items-center justify-center gap-2"
-            >
-              <Download className="w-4 h-4" />
-              Download Resume
-            </motion.button>
+            <div className="px-4 flex gap-2">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                onClick={toggleLanguage}
+                className="flex-1 px-4 py-2 glass rounded-lg border border-white/10 hover:border-web3-blue/50 transition-colors flex items-center justify-center gap-2"
+              >
+                <Globe className="w-4 h-4" />
+                {currentLocale === 'ko' ? 'EN' : 'KO'}
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                onClick={downloadResume}
+                className="flex-1 px-4 py-2 bg-gradient-to-r from-web3-blue to-web3-blue rounded-lg font-semibold flex items-center justify-center gap-2"
+              >
+                <Download className="w-4 h-4" />
+                Resume
+              </motion.button>
+            </div>
           </div>
         </motion.div>
       </div>

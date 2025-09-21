@@ -7,8 +7,10 @@ import { ChevronDown, Github, Twitter, Send, Linkedin, Mail } from 'lucide-react
 import ParticleBackground from './ParticleBackground'
 import AnimatedName from './AnimatedName'
 import { resumeData } from '@/data/resume'
+import { useTranslations } from 'next-intl'
 
 export default function HeroSection() {
+  const t = useTranslations('hero');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
